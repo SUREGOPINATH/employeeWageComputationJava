@@ -6,6 +6,6 @@ public class employeeWageComputationJava {
     {
         System.out.println("welcome to employee wage Computation");
         Utilities utilities = new Utilities();
-        utilities.attendanceChecker();
+        utilities.employeeDailyWagePerMonth();
     }
 }
