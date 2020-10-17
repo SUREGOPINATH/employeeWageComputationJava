@@ -1,4 +1,5 @@
 package com.programs;
+import com.utility.EmployeeWageComputationObject;
 import com.utility.Utilities;
 
 /**
@@ -14,8 +15,13 @@ public class employeeWageComputationJava {
 
     public static void main (String[] args)
     {
-        System.out.println("welcome to employee wage Computation");
+        System.out.println("welcome to employee wage Computation\n");
         Utilities utilities = new Utilities();
-        utilities.employeeDailyWagePerMonth();
+        EmployeeWageComputationObject dmart = new EmployeeWageComputationObject();
+        dmart.setWagePerHr(20);
+        dmart.setDaysInMonth(20);
+        dmart.setMaxWorkingHours(100);
+        dmart.setCompany("dmart");
+        utilities.employeeDailyWagePerMonth(dmart.getCompany(),dmart.getWagePerHr(),dmart.getDaysInMonth(),dmart.getMaxWorkingHours());
     }
 }

@@ -10,10 +10,8 @@ import java.util.Arrays;
  * */
 public class Utilities {
 
-
-    static int wagePerHr = 20;
-    static int daysInMonth = 20;
     static  int wages = 0;
+    static int empHrs = 0;
     static int totalWages = 0;
     static int[] arrayOfWages = new int[20];
 
@@ -22,13 +20,15 @@ public class Utilities {
      *                 wage computation program
      *
      * */
-    public void employeeDailyWagePerMonth () {
+    public void employeeDailyWagePerMonth (String company,int wagePerHr,int daysInMonth,int maxworkingHours) {
 
         int index = 0;
         int totalDays = 1;
         int totalHrs = 0;
-        while (totalDays<daysInMonth && totalHrs<100) {
-            int wages = attendanceChecker();
+        while (totalDays<=daysInMonth && totalHrs<maxworkingHours) {
+            empHrs = attendanceChecker();
+            wages = empHrs * wagePerHr;
+            System.out.println("Day"+totalDays+" Wage is "+wages+"\n");
             arrayOfWages[index] = wages;
             totalWages+=wages;
             totalHrs+=wages/20;
@@ -36,7 +36,8 @@ public class Utilities {
             index++;
         }
         System.out.println("all wages in a month are "+ Arrays.toString(arrayOfWages));
-        System.out.println("total wages of employee in a month is "+totalWages+"\ntotal working Days are "+totalDays+"\ntotal working hours are "+totalHrs);
+        System.out.println("Total working hours "+totalHrs);
+        System.out.println("The wages of company "+company+" for month of employee is "+totalWages);
     }
 
     /**
@@ -53,38 +54,29 @@ public class Utilities {
      *                      0 -> employee Absent
      *                      1 -> employee Fulltime
      *                      2 -> employee parttime
-     * @return -> return the value wage from employeeDailyWage method
+     * @return -> return the value of empHrs ( 0,4,8 )
+     *            0 -> employee Hours for Absent employee
+     *            4 -> employee Hours for Parttime employee
+     *            8 -> employee Hours for Fulltime employee
      * */
     public static int employeeAttendance (int attendance) {
 
         switch (attendance) {
             case 1 -> {
                 System.out.println("employee fulltime present");
-                wages = employeeDailyWage(8);
+                empHrs = 8;
             }
             case 2 -> {
                 System.out.println("employee parttime Present");
-                wages = employeeDailyWage(4);
+                empHrs = 4;
             }
             default -> {
                 System.out.println("employee Absent");
-                wages = employeeDailyWage(0);
+                empHrs = 0;
 
             }
         }
-        System.out.println("employee daily wage is " + wages+"\n");
-        return wages;
-    }
-
-    /**
-     * @param hrs -> it has value from employeeAttendance(0,4,8)
-     *               0 -> working hours is 0 i.e employee absent
-     *               4 -> working hours is 4 i.e employee parttime
-     *               8 -> working hours is 8 i.e employee Fulltime
-     *
-     * */
-    public static int employeeDailyWage (int hrs) {
-        return hrs*wagePerHr;
+        return empHrs;
     }
 
 }
