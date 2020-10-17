@@ -12,13 +12,19 @@ public class Utilities {
     static int[] arrayOfWages = new int[20];
     public void employeeDailyWagePerMonth () {
 
-        for (int counter = 0; counter<daysInMonth;counter++) {
+        int index = 0;
+        int totalDays = 1;
+        int totalHrs = 0;
+        while (totalDays<daysInMonth && totalHrs<100) {
             int wages = attendanceChecker();
-            arrayOfWages[counter] = wages;
+            arrayOfWages[index] = wages;
             totalWages+=wages;
+            totalHrs+=wages/20;
+            totalDays++;
+            index++;
         }
         System.out.println("all wages in a month are "+ Arrays.toString(arrayOfWages));
-        System.out.println("total wages of employee is "+totalWages);
+        System.out.println("total wages of employee in a month is "+totalWages+"\ntotal working Days are "+totalDays+"\ntotal working hours are "+totalHrs);
     }
     public static int attendanceChecker () {
 
@@ -41,7 +47,7 @@ public class Utilities {
 
             }
         }
-        System.out.println("employee daily wage is " + wages);
+        System.out.println("employee daily wage is " + wages+"\n");
         return wages;
     }
     public static int employeeDailyWage (int hrs) {
