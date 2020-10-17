@@ -2,8 +2,7 @@ package com.utility;
 
 public class Utilities {
 
-    static int isFulltime = 1;
-    static int isParttime = 2;
+
     static int wagePerHr = 20;
     public void attendanceChecker () {
 
@@ -11,17 +10,19 @@ public class Utilities {
     }
     public static void employeeAttendance (int attendance) {
 
-        if (attendance == isFulltime) {
-            System.out.println("employee fulltime present");
-            System.out.println("employee daily wage is " + employeeDailyWage(8));
-        }
-        else if (attendance == isParttime) {
-            System.out.println("employee parttime Present");
-            System.out.println("employee daily wage is "+ employeeDailyWage(4));
-        }
-        else {
-            System.out.println("employee Absent");
-            System.out.println("employee daily wage is " + employeeDailyWage(0));
+        switch (attendance) {
+            case 1 -> {
+                System.out.println("employee fulltime present");
+                System.out.println("employee daily wage is " + employeeDailyWage(8));
+            }
+            case 2 -> {
+                System.out.println("employee parttime Present");
+                System.out.println("employee daily wage is " + employeeDailyWage(4));
+            }
+            default -> {
+                System.out.println("employee Absent");
+                System.out.println("employee daily wage is " + employeeDailyWage(0));
+            }
         }
     }
     public static int employeeDailyWage (int hrs) {
