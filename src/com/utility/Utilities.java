@@ -37,7 +37,7 @@ public class Utilities {
         }
         System.out.println("all wages in a month are "+ Arrays.toString(arrayOfWages));
         System.out.println("Total working hours "+totalHrs);
-        System.out.println("The wages of company "+company+" for month of employee is "+totalWages);
+        System.out.println("The wages of employee in the "+company+" company for month is "+totalWages+"\n");
     }
 
     /**

@@ -23,5 +23,11 @@ public class employeeWageComputationJava {
         dmart.setMaxWorkingHours(100);
         dmart.setCompany("dmart");
         utilities.employeeDailyWagePerMonth(dmart.getCompany(),dmart.getWagePerHr(),dmart.getDaysInMonth(),dmart.getMaxWorkingHours());
+        EmployeeWageComputationObject reliance = new EmployeeWageComputationObject();
+        reliance.setWagePerHr(20);
+        reliance.setDaysInMonth(20);
+        reliance.setMaxWorkingHours(100);
+        reliance.setCompany("reliance");
+        utilities.employeeDailyWagePerMonth(reliance.getCompany(),reliance.getWagePerHr(),reliance.getDaysInMonth(),reliance.getMaxWorkingHours());
     }
 }
