@@ -17,17 +17,20 @@ public class employeeWageComputationJava {
     {
         System.out.println("welcome to employee wage Computation\n");
         Utilities utilities = new Utilities();
-        EmployeeWageComputationObject dmart = new EmployeeWageComputationObject();
-        dmart.setWagePerHr(20);
-        dmart.setDaysInMonth(20);
-        dmart.setMaxWorkingHours(100);
-        dmart.setCompany("dmart");
-        utilities.employeeDailyWagePerMonth(dmart.getCompany(),dmart.getWagePerHr(),dmart.getDaysInMonth(),dmart.getMaxWorkingHours());
-        EmployeeWageComputationObject reliance = new EmployeeWageComputationObject();
-        reliance.setWagePerHr(20);
-        reliance.setDaysInMonth(20);
-        reliance.setMaxWorkingHours(100);
-        reliance.setCompany("reliance");
-        utilities.employeeDailyWagePerMonth(reliance.getCompany(),reliance.getWagePerHr(),reliance.getDaysInMonth(),reliance.getMaxWorkingHours());
+        EmployeeWageComputationObject employeeWageComputationObject = new EmployeeWageComputationObject();
+        employeeWageComputationObject.setWagePerHr(20);
+        employeeWageComputationObject.setDaysInMonth(20);
+        employeeWageComputationObject.setMaxWorkingHours(100);
+        employeeWageComputationObject.setCompany("dmart");
+        utilities.employeeDailyWagePerMonth(employeeWageComputationObject.getCompany(),employeeWageComputationObject.getWagePerHr(),
+                                            employeeWageComputationObject.getDaysInMonth(),employeeWageComputationObject.getMaxWorkingHours());
+
+
+        employeeWageComputationObject.setWagePerHr(20);
+        employeeWageComputationObject.setDaysInMonth(20);
+        employeeWageComputationObject.setMaxWorkingHours(100);
+        employeeWageComputationObject.setCompany("reliance");
+        utilities.employeeDailyWagePerMonth(employeeWageComputationObject.getCompany(),employeeWageComputationObject.getWagePerHr(),
+                                            employeeWageComputationObject.getDaysInMonth(),employeeWageComputationObject.getMaxWorkingHours());
     }
 }
